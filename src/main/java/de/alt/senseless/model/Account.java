@@ -13,12 +13,25 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Account {
 
-	@OneToMany(mappedBy = "account")
-	private Set<Bookmark> bookmarks = new HashSet<>();
+	Account() { // jpa only
+	}
+
+	public Account(String name, String password) {
+		this.username = name;
+		this.password = password;
+	}
 
 	@Id
 	@GeneratedValue
 	private Long id;
+
+	@JsonIgnore
+	public String password;
+
+	public String username;
+
+	@OneToMany(mappedBy = "account")
+	private Set<Bookmark> bookmarks = new HashSet<>();
 
 	public Set<Bookmark> getBookmarks() {
 		return bookmarks;
@@ -36,15 +49,4 @@ public class Account {
 		return username;
 	}
 
-	@JsonIgnore
-	public String password;
-	public String username;
-
-	public Account(String name, String password) {
-		this.username = name;
-		this.password = password;
-	}
-
-	Account() { // jpa only
-	}
 }

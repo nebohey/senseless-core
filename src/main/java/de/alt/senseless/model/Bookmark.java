@@ -10,14 +10,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Bookmark {
 
-	@JsonIgnore
-	@ManyToOne
-	private Account account;
-
-	@Id
-	@GeneratedValue
-	private Long id;
-
 	Bookmark() { // jpa only
 	}
 
@@ -27,7 +19,16 @@ public class Bookmark {
 		this.account = account;
 	}
 
+	@Id
+	@GeneratedValue
+	private Long id;
+
+	@JsonIgnore
+	@ManyToOne
+	private Account account;
+
 	public String uri;
+
 	public String description;
 
 	public Account getAccount() {
