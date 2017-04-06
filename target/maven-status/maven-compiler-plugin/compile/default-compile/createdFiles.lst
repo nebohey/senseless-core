@@ -1,8 +1,0 @@
-de\alt\senseless\model\AccountRepository.class
-de\alt\senseless\model\Bookmark.class
-de\alt\senseless\controller\BookmarkRestController.class
-de\alt\senseless\model\BookmarkRepository.class
-de\alt\senseless\model\Account.class
-de\alt\senseless\Application.class
-de\alt\senseless\controller\ControllerWithoutAnySense.class
-de\alt\senseless\controller\UserNotFoundException.class
