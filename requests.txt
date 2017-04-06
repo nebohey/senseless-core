@@ -1,0 +1,4 @@
+
+curl -X POST -d "username=jlong&password=password" http://localhost:8080/auth
+
+curl http://localhost:8080/auth/{token}
