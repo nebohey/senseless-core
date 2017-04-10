@@ -1,4 +1,4 @@
-package de.alt.senseless.model;
+package de.alt.senseless.model.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

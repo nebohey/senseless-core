@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import de.alt.senseless.model.AccountRepository;
-import de.alt.senseless.model.Bookmark;
-import de.alt.senseless.model.BookmarkRepository;
+import de.alt.senseless.model.entities.Bookmark;
+import de.alt.senseless.model.repos.AccountRepository;
+import de.alt.senseless.model.repos.BookmarkRepository;
 
 @RestController
 @RequestMapping("/{userId}/bookmarks")
