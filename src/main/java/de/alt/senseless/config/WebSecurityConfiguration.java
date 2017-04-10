@@ -11,7 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import de.alt.senseless.controller.UserNotFoundException;
+import de.alt.senseless.exception.UserNotFoundException;
 import de.alt.senseless.model.entities.Account;
 import de.alt.senseless.model.repos.AccountRepository;
 

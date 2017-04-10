@@ -8,18 +8,25 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import de.alt.senseless.model.entities.Account;
+import de.alt.senseless.model.entities.Bookmark;
 import de.alt.senseless.model.repos.AccountRepository;
+import de.alt.senseless.model.repos.BookmarkRepository;
 
 @Configuration
 public class AppConfig {
 
 	@Bean
-	public CommandLineRunner createRegi(AccountRepository accountRepository) {
+	public CommandLineRunner createRegi(AccountRepository accountRepository, BookmarkRepository bookmarkRepository) {
+
 		return args -> {
 
-			accountRepository.save(new Account("regi", "password"));
+			Account account = accountRepository.save(new Account("regi", "password"));
+
+			bookmarkRepository.save(new Bookmark(account, "http://bookmark.com/1/foo", "A description"));
+			bookmarkRepository.save(new Bookmark(account, "http://bookmark.com/2/bar", "A description"));
 
 		};
+
 	}
 
 	@Bean
