@@ -2,6 +2,8 @@ package de.alt.senseless.config;
 
 import java.util.Arrays;
 
+import de.alt.senseless.model.entities.Address;
+import de.alt.senseless.model.repos.AddressRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -16,7 +18,7 @@ import de.alt.senseless.model.repos.BookmarkRepository;
 public class AppConfig {
 
 	@Bean
-	public CommandLineRunner createRegi(AccountRepository accountRepository, BookmarkRepository bookmarkRepository) {
+	public CommandLineRunner createRegi(AccountRepository accountRepository, BookmarkRepository bookmarkRepository, AddressRepository addressRepository) {
 
 		return args -> {
 
@@ -24,6 +26,9 @@ public class AppConfig {
 
 			bookmarkRepository.save(new Bookmark(account, "http://bookmark.com/1/foo", "A description"));
 			bookmarkRepository.save(new Bookmark(account, "http://bookmark.com/2/bar", "A description"));
+
+			Address address = new Address("test", "127.0.0.1");
+			addressRepository.save(address);
 
 		};
 
