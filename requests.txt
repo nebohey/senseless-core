@@ -1,2 +1,4 @@
 
 curl -u regi:password -X POST -d "ip=127.0.0.2" http://localhost:8080/address/test
+
+curl -u regi:password -X DELETE http://localhost:8080/address/test
