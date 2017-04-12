@@ -19,14 +19,14 @@ import de.alt.senseless.model.repos.BookmarkRepository;
 
 @RestController
 @RequestMapping("/{userId}/bookmarks")
-class BookmarkRestController {
+public class BookmarkController {
 
 	private final BookmarkRepository bookmarkRepository;
 
 	private final AccountRepository accountRepository;
 
 	@Autowired
-	BookmarkRestController(BookmarkRepository bookmarkRepository, AccountRepository accountRepository) {
+	BookmarkController(BookmarkRepository bookmarkRepository, AccountRepository accountRepository) {
 		this.bookmarkRepository = bookmarkRepository;
 		this.accountRepository = accountRepository;
 	}
