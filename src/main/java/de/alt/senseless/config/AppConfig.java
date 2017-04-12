@@ -2,23 +2,28 @@ package de.alt.senseless.config;
 
 import java.util.Arrays;
 
-import de.alt.senseless.model.entities.Address;
-import de.alt.senseless.model.repos.AddressRepository;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import de.alt.senseless.model.entities.Account;
+import de.alt.senseless.model.entities.Address;
 import de.alt.senseless.model.entities.Bookmark;
 import de.alt.senseless.model.repos.AccountRepository;
+import de.alt.senseless.model.repos.AddressRepository;
 import de.alt.senseless.model.repos.BookmarkRepository;
 
 @Configuration
 public class AppConfig {
 
+	@Value("${list.beans}")
+	private boolean listSpringBootBeans;
+
 	@Bean
-	public CommandLineRunner createRegi(AccountRepository accountRepository, BookmarkRepository bookmarkRepository, AddressRepository addressRepository) {
+	public CommandLineRunner createRegi(AccountRepository accountRepository, BookmarkRepository bookmarkRepository,
+			AddressRepository addressRepository) {
 
 		return args -> {
 
@@ -38,14 +43,18 @@ public class AppConfig {
 	public CommandLineRunner listSpringBootBeans(ApplicationContext ctx) {
 		return args -> {
 
-			System.out.println("Let's inspect the beans provided by Spring Boot:");
+			if (listSpringBootBeans) {
 
-			String[] beanNames = ctx.getBeanDefinitionNames();
+				System.out.println("Let's inspect the beans provided by Spring Boot:");
 
-			Arrays.sort(beanNames);
+				String[] beanNames = ctx.getBeanDefinitionNames();
 
-			for (String beanName : beanNames) {
-				System.out.println(beanName);
+				Arrays.sort(beanNames);
+
+				for (String beanName : beanNames) {
+					System.out.println(beanName);
+				}
+
 			}
 
 		};
