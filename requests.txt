@@ -1,6 +1,2 @@
 
-curl -X POST -d "username=jlong&password=password" http://localhost:8080/auth
-
-curl http://localhost:8080/auth/{token}
-
-test123
+curl -u regi:password -X POST -d "ip=127.0.0.2" http://localhost:8080/address/test

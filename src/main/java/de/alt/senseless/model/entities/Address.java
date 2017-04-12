@@ -54,4 +54,12 @@ public class Address {
     public Date getLastUpdate() {
         return lastUpdate;
     }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
+    public void setLastUpdate(Date lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
 }
