@@ -7,6 +7,6 @@ Playground for Spring (Boot) and Docker
 + check out [Waffle](waffle.io)
 + check out [CodeCov](https://codecov.io/)
 + deploy on Openshift
-+ asdfsa
++ asdfsaa
 + ...
 
